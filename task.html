@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Sale App</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: red;
+      transform: scale(1.1);
+    }
+
+    /* Header */
+    .header {
+      background: radial-gradient(#e09562, rgb(255, 235, 221));
+      padding-top: 100px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .col-2 {
+      flex-basis: 50%;
+      min-width: 300px;
+    }
+
+    .col-2 img {
+      width: 200%;
+      max-width: 400px;
+    }
+
+    .col-2 h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .col-2 p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #ff523b;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: black;
+      transform: scale(1.05);
+    }
+
+    /* Product Section */
+    #product {
+      text-align: center;
+      font-size: 20px;
+      margin: 30px 0;
+      color: #88e91a;
+    }
+
+    .p-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card-one, .card-two, .card-three, .card-four {
+      border: 3px solid rgba(248, 174, 114, 0.849);
+      border-radius: 20px;
+      padding: 30px;
+      width: 280px;
+      text-align: center;
+      background: rgb(204, 236, 241);
+      transition: 0.4s ease;
+    }
+
+    .card-one:hover,
+    .card-two:hover,
+    .card-three:hover,
+    .card-four:hover {
+      transform: translateY(-12px) scale(1.05);
+      border-color: #ff523b;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
+      background: white;
+    }
+
+    .card-ul img {
+      width: 200px;
+      border-radius: 20px;
+      transition: 0.4s;
+    }
+
+    /* .card-ul img:hover {
+      transform: scale(1.08);
+    } */
+
+    .p-amount {
+      color: red;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      background: #ff523b;
+      color: white;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    button:hover {
+      background: black;
+      transform: scale(1.1);
+      box-shadow: 0px 5px 15px rgba(255,82,59,0.6);
+    }
+
+    /* Announcement */
+    .acc-h2 {
+      text-align: center;
+      font-size: 38px;
+      color: #f55134;
+      margin-top: 40px;
+    }
+
+    .acc-para {
+      margin: 20px;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgb(245, 219, 163);
+      font-size: 20px;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: black;
+      color: white;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    footer i {
+      font-size: 30px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    footer i:hover {
+      transform: scale(1.2);
+      color: red;
+    }
+
+    form input {
+      padding: 8px;
+      border-radius: 8px;
+      border: 2px solid red;
+      margin: 10px 0;
+    }
+
+    form button {
+      background: chartreuse;
+      color: black;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: white;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>Big Online Sale</h2>
+    <nav>
+      <ul>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="row">
+      <div class="col-2">
+        <h1>Welcome to Online Big Sale</h1>
+        <p>Enjoy amazing discounts on top products every day.</p>
+        <a class="button" href="#">Explore Now!</a>
+      </div>
+
+      <div class="col-2">
+        <img src="./png.png" alt="Banner">
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <h1 id="product">Product</h1>
+
+  <section class="p-head">
+
+    <ul class="card-one card-ul">
+      <img src="./image-01.png">
+      <p>Rolls-Royce Boat Tail</p>
+      <p class="p-amount">₹206 crore+</p>
+      <p>Ultimate luxury masterpiece</p>
+      <button>Buy</button>
+    </ul>
+
+    <ul class="card-two card-ul">
+      <img src="./image-2.png">
+      <p>Bugatti La Voiture Noire</p>
+      <p class="p-amount">₹206 crore+</p>
+      <p>Exclusive sports elegance</p>
+      <button>Buy</button>
+    </ul>
+
+    <ul class="card-three card-ul">
+      <img src="./image-3.png">
+      <p>Pagani Zonda HP</p>
+      <p class="p-amount">₹206 crore+</p>
+      <p>Luxury performance car</p>
+      <button>Buy</button>
+    </ul>
+
+    <ul class="card-four card-ul">
+      <img src="./image-4.png">
+      <p>Lamborghini Veneno</p>
+      <p class="p-amount">₹206 crore+</p>
+      <p>Dream car for speed lovers</p>
+      <button>Buy</button>
+    </ul>
+
+  </section>
+
+  <!-- Announcement -->
+  <section id="About">
+    <h2 class="acc-h2">Special Announcement</h2>
+    <p class="acc-para">
+      🎉 Huge Car Sale is Live Now! <br>
+      Exclusive Discounts on Luxury & Sports Cars. <br>
+      Limited Time Offer – Don’t Miss Out! <br>
+      Premium Cars at Best Prices This Week. <br>
+      Shop Now and Drive Home in Style!
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer id="Contact">
+
+    <div>
+      <h3>Follow Us</h3>
+      <i class="fa-brands fa-whatsapp"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+
+    <form>
+      <h3>Subscribe Newsletter</h3>
+      <input type="email" placeholder="Enter your email" required>
+      <button>Subscribe</button>
+    </form>
+
+  </footer>
+
+</body>
+</html>
